@@ -13,6 +13,18 @@
     border-radius: 5px;
     font-size: 16px;
   }
+  .radio-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .radio-group input {
+    margin: 0;
+  }
+  
+  .radio-group span {
+    font-weight: bold;
+  }  
   
   button {
     background-color: #007bff;
