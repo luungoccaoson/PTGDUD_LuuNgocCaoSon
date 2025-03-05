@@ -9,6 +9,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
+    border: solid #dadada 0.7px;
+    box-shadow: silver 0px 2px 2px 0px;
+    margin-bottom: 2px;
 }
 
 .icon img {
@@ -17,25 +20,42 @@
 }
 
 .search-input {
+    width: 400px;
+    height: 50px;
     padding: 8px 15px;
-    font-size: 14px;
-    border-radius: 10px;
-    border: 1px solid #c5c5c5;
-    margin: 0 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgb(240, 240, 240);
+    border: none;
+    margin: 0 10px;
+}
+.input-recipe .iconSearch{
+    margin-left: 10px;
+}
+.input-recipe .search-input {
+    padding-left: 50px; 
+  }
+
+.iconSearch{
+    width: 30px;
+    height: 30px;
 }
 
 .menu ul {
+    width: 100%px;
     display: flex;
     list-style: none;
 }
 
 .menu li {
-    margin-right: 20px;
+    width: 100px;
+    margin-right: 40px;
 }
 
 .menu a {
+    
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     color: rgb(187, 187, 187);
     transition: color 0.3s ease;
 }
@@ -47,25 +67,25 @@
 
 .input-recipe {
     position: relative;
+    margin-right: 5px;
 }
 
 .input-recipe i {
     position: absolute;
     left: 10px;
-    top: 50%;
+    top: 52%;
     transform: translateY(-50%);
 }
 
 .button-recipe {
-    width: 100%;
+    width: 80%;
+    height: 50px;
     padding: 10px 15px;
-    padding-left: 40px; 
-    font-size: 14px;
+    font-size: 20px;
     border: none;
     border-radius: 10px;
     background-color: rgb(252, 233, 236);
     color: #d35d8a;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,68 +100,6 @@
 }
 
 .button-recipe img {
-    width: 20px; 
-    height: 20px;
-}
-
-.body-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start;
-  } 
-.avatar-content{
-    padding: 5px;
-    margin: 10px 10px;
-}
-.avatar{
-    width: 30%;
-    float: left;
-}
-.content{
-    width: 69%;
-    float: left;
-    text-align: justify; 
-}
-
-.content span, button{
-    margin-top: 50px;
-    padding: 10px;
-}
-
-.content span{
-    color: #ff90bb;
-}
-
-.content button{
-    width: 10%;
-    border-radius: 10px;
-    border: none;
-    background-color: #fa7ead;
-    color: white;
-}
-
-.content button:hover{
-    background-color: #ff90bb;
-}
-.menu1{
-    width: 100%;
-    border-bottom: rgb(177, 177, 177) solid 0.7px;
-}
-.menu1 ul {
-    display: flex;
-    list-style: none;
-}
-
-.menu1 li {
-    margin-right: 20px;
-    padding: 10px 10px;
-
-}
-
-.menu1 a {
-    text-decoration: none;
-    font-size: 16px;
-    color: black;
-    transition: color 0.3s ease;
+    width: 25px; 
+    height: 25px;
 }

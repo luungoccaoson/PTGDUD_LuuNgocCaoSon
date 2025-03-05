@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-import Bai1 from './component/header'
+import Header from './component/header'
+import Body from './component/body'
+
 function App() {
 
   return (
     <>
-      <Bai1></Bai1>
+      <Header/>
+      <Body/>
     </>
   )
 }
