@@ -1,0 +1,68 @@
+.footer{
+    height: 500px;
+    background-color:rgb(34, 34, 34);
+    padding: 40px 50px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 0 5px;
+    font-size: 20px;
+}
+
+.left{
+    width: 45%;
+    float: left;
+    text-align: left;
+    padding: 20px 10px;
+}
+
+.send-email{
+    width: 80%;
+    height: 200px;
+}
+
+.send-email input{
+    background-color: white;
+    width: 70%;
+    height: 40px;
+    padding: 10px; 
+    font-size: 20px;  
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.send-email button{
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    background-color: rgb(253, 83, 140);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.avt span{
+    padding: 20px 15px;
+}
+
+.mid{
+    width: 30%;
+    float: left;
+    text-align: left;
+    margin-left: 150px;
+}
+
+.right{
+    width: 15%;
+    float: left;
+    text-align: left;
+}
+
+.mid p, .right p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.mid div{
+    margin-bottom: 120px;
+}
