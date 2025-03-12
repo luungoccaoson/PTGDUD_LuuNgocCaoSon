@@ -1,37 +1,39 @@
+@import "tailwindcss"; 
 .footer{
-    height: 500px;
-    background-color:rgb(34, 34, 34);
+    /* height: 500px;
+    background-color:rgb(34, 34, 34); */
     padding: 40px 50px;
-    color: white;
+    /* color: white;
     border: none;
     border-radius: 10px;
     box-shadow: 2px 0 5px;
-    font-size: 15px;
+    font-size: 15px; */
 }
 
-.left{
+/* .left{
     width: 45%;
     float: left;
     text-align: left;
     padding: 20px 10px;
-}
+} */
 
 .send-email{
     width: 80%;
     height: 200px;
+    color: black;
 }
 
 .send-email input{
-    background-color: white;
-    width: 70%;
-    height: 40px;
+    /* background-color: white; */
+    /* width: 70%; */
+    /* height: 40px; */
     padding: 10px; 
-    font-size: 20px;  
-    border-radius: 5px;
+    /* font-size: 20px;   */
+    /* border-radius: 5px; */
     margin-right: 10px;
 }
 
-.send-email button{
+/* .send-email button{
     width: 80px;
     height: 40px;
     font-size: 20px;
@@ -39,7 +41,7 @@
     color: white;
     border: none;
     border-radius: 5px;
-}
+} */
 
 .avt span{
     padding: 20px 15px;

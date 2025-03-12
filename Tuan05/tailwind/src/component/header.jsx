@@ -14,7 +14,7 @@ export default function header() {
   return (
     <>
       <div class="container">
-        <header className="flex items-center justify-between px-[20px] py-[10px] border-solid border-[#dadada] border-[0.7px] [box-shadow:silver_0px_2px_2px_0px] mb-[2px]">
+        <header className="w-full flex items-center justify-between border-solid border-[#dadada] border-[0.7px] [box-shadow:silver_0px_2px_2px_0px] mb-[2px] flex-container ">
 
           <img className="icon" src= {hinh} alt="Logo" />
           

@@ -1,13 +1,14 @@
-/* .body-container {
-    width: 100%;
-    display: flex;
+@import "tailwindcss";
+.body-container {
+    /* width: 100%;
+    display: flex; */
     padding: 40px 150px;
-    flex-direction: column; 
+    /* flex-direction: column; 
     align-items: flex-start;
     border: solid #dadada 0.7px;
     box-shadow: silver 0px 2px 2px 0px;
-    margin-bottom: 2px;
-  }  */
+    margin-bottom: 2px; */
+  } 
 /* .avatar-content{
     padding: 5px;
     margin: 10px 10px;

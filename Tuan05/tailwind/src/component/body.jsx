@@ -62,7 +62,7 @@ export default function body() {
 
     return (
         <>
-            <div className="w-full flex px-[150px] py-[40px] flex-col items-start border-solid border-[#dadada] border-[0.7px] [box-shadow:silver_0px_2px_2px_0px] mb-[2px]">
+            <div className="w-full flex flex-col items-start border-solid border-[#dadada] border-[0.7px] [box-shadow:silver_0px_2px_2px_0px] mb-[2px] body-container">
                 <h1>Emma Gonzalez's Recipe Box</h1>
                 <div className='p-[5px] m-[10px]'>
                     <div className='w-1/5 float-left'>             

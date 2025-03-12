@@ -4,13 +4,13 @@ export default function footer() {
 
     return(
         <>
-            <div className="footer">
-                <div className="left">
+            <div className="h-[500px] bg-[rgb(34,_34,_34)] text-[white] border-none rounded-[10px] [box-shadow:2px_0_5px] text-[15px] footer">
+                <div className="w-[45%] float-left text-left px-[10px] py-[20px]">
                     <h3>About Us</h3> <br />
                     <p>Welcome to our website, a wonderful place to explore and learn how to cook like a pro.</p>
                     <div className="send-email">
-                        <input type="email" name="" id="" placeholder="Enter your email" />
-                        <button>Send</button>
+                        <input className='bg-[white] w-[70%] h-[40px] text-xl rounded-[5px]' type="email" name="" id="" placeholder="Enter your email" />
+                        <button className='w-[80px] h-[40px] text-xl bg-[rgb(253,_83,_140)] text-[white] border-none rounded-[5px]'>Send</button>
                     </div>
 
                     <div className='avt'>
