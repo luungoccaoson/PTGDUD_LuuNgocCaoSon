@@ -1,0 +1,93 @@
+@import "tailwindcss";  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border: solid #dadada 0.7px;
+    box-shadow: silver 0px 2px 2px 0px;
+    margin-bottom: 2px;
+} */
+
+
+.search-input {
+    padding: 8px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: rgb(247, 247, 247);
+    border: none;
+    margin: 0 10px;
+    padding-left: 30px;
+}
+.iconSearch{
+    width: 25px;
+    height: 25px;
+    margin-left: 2px;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.menu a {
+    
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(187, 187, 187);
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #007BFF;
+}
+
+
+/* .input-recipe {
+    position: relative;
+    margin-right: 5px;
+}
+
+.input-recipe i {
+    position: absolute;
+    left: 10px;
+    top: 52%;
+    transform: translateY(-50%);
+} */
+
+/* .button-recipe {
+    width: 200px;
+    padding: 5px 5px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(252, 233, 236);
+    color: #d35d8a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.button-recipe:hover {
+    background-color: #ffe1fd;
+}
+
+.button-recipe i {
+    margin-right: 10px;
+}
+
+.button-recipe img {
+    width: 25px; 
+    height: 25px;
+}
