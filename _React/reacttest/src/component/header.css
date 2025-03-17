@@ -1,0 +1,92 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 3px;
+    border: solid #f7f7f7 0.7px;
+    box-shadow: rgb(230, 230, 230) 0px 2px 2px 0px;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+}
+
+.h-left{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 140px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.search{
+    background-color: rgb(243, 243, 243);
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.search img{
+    margin-left: 5px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.search input{
+    min-width: 300px;
+    margin-left: 5px;
+    border: none;
+    outline: none;
+    background-color: rgb(243, 243, 243);
+    font-size: 17px;
+    color: black;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: rgb(112, 112, 112);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.menu a:hover{
+    color: #ff69b4;
+}
+
+.h-right{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.recipe-box{
+    display: flex;
+    border: none;
+    align-items: center;
+    padding: 15px 15px;
+    gap: 5px;
+    color: #ff69b4;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #fdebf4;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cart-icon{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+
+
