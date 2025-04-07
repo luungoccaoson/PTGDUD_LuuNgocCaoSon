@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 
 const AddUserModal = ({ onClose, onAdd }) => {
   const [formData, setFormData] = useState({
@@ -15,15 +14,21 @@ const AddUserModal = ({ onClose, onAdd }) => {
   };
 
   const handleSubmit = () => {
-    axios
-      .post("https://<your-mockapi-id>.mockapi.io/users", formData)
-      .then((response) => onAdd(response.data))
+    fetch("https://67e368a62ae442db76d0012e.mockapi.io/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => onAdd(data))
       .catch((error) => console.error("Error adding user:", error));
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded-lg w-96">
+    <div className="fixed inset-0 backdrop-blur-sm flex items-center justify-center shadow-lg z-50">
+      <div className="bg-white border-1 p-6 rounded-lg w-96">
         <h2 className="text-lg font-bold mb-4">Add User</h2>
         <div className="space-y-4">
           <input
@@ -81,5 +86,6 @@ const AddUserModal = ({ onClose, onAdd }) => {
     </div>
   );
 };
+
 
 export default AddUserModal;

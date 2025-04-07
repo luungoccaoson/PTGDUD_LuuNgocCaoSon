@@ -11,7 +11,6 @@ const DataTable = () => {
   const [selectedUser, setSelectedUser] = useState(null);
   const tableRef = useRef(null);
 
-  // Fetch data from MockAPI
   useEffect(() => {
     fetch("https://67e368a62ae442db76d0012e.mockapi.io/user")
       .then((res) => res.json())
@@ -33,9 +32,25 @@ const DataTable = () => {
             orderable: false,
             searchable: false,
           },
-          { title: "Customer Name", data: "customerName" },
-          { title: "Company", data: "company" },
-          { title: "Order Value", data: "orderValue" },
+          { title: "Customer Name", data: "customerName",
+            render: (data, type, row) => `
+              <div class="flex items-center gap-2">
+                <img src="${row.img}" alt="avatar" class="w-8 h-8 rounded-full" />
+                <span class="font-bold">${data}</span>
+              </div>
+            `,
+            width: "20%",
+          },
+          { title: "Company", data: "company",
+            render: (data, type, row) => `
+              <p>${data}</p>
+              `,
+          },
+          { title: "Order Value", data: "orderValue", 
+            render: (data, type, row) => `
+              <p class="text-left">${data}</p>
+              `,
+          },
           { title: "Order Date", data: "orderDate" },
           {
             title: "Status",
@@ -51,27 +66,31 @@ const DataTable = () => {
             },
           },
           {
-            title: "Actions",
+            title: "",
             data: null,
             render: (data, type, row) =>
-              `<button class="edit-btn text-blue-500 hover:underline">Edit</button>`,
+              `<button class="edit-btn hover:underline cursor-pointer"><img src="/img/create.png" alt="" className="pointer-events-none"/></button>`,
             orderable: false,
             searchable: false,
           },
         ],
         pageLength: 6,
-        lengthMenu: [5, 10, 25, 50, 100],
-        dom: "rtip", // Remove default search and length change controls
+        lengthMenu: [6, 10, 25, 50, 100],
+        dom: "rtip",
+        createdRow: (row, data, dataIndex) => {
+          $(row).addClass("hover:bg-gray-50");
+        },
+        language: {
+          info: "_TOTAL_ results",           
+        },
       });
 
-      // Handle Edit button click
       $(tableRef.current).on("click", ".edit-btn", function () {
         const data = table.row($(this).parents("tr")).data();
         setSelectedUser(data);
         setIsEditModalOpen(true);
       });
 
-      // Cleanup DataTable on component unmount
       return () => {
         table.destroy();
       };
@@ -85,7 +104,7 @@ const DataTable = () => {
           <img src="/img/File text 1.png" alt="" className="w-8"/>
           <h2 className="text-2xl font-bold">Detailed Report</h2>
         </div>
-        
+                
         <div className="flex items-center gap-2">
           <button
             className="flex gap-1 bg-white text-pink-500 border border-pink-500 px-4 py-2 rounded-lg mr-2 cursor-pointer"
@@ -117,11 +136,9 @@ const DataTable = () => {
           </tr>
         </thead>
         <tbody>
-          
         </tbody>
       </table>
 
-      {/* Modals */}
       {isEditModalOpen && (
         <EditModal
           user={selectedUser}

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 
 const EditModal = ({ user, onClose, onSave }) => {
   const [formData, setFormData] = useState({ ...user });
@@ -9,15 +8,21 @@ const EditModal = ({ user, onClose, onSave }) => {
   };
 
   const handleSubmit = () => {
-    axios
-      .put(`https://<your-mockapi-id>.mockapi.io/users/${user.id}`, formData)
-      .then((response) => onSave(response.data))
+    fetch(`https://67e368a62ae442db76d0012e.mockapi.io/user/${user.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => onSave(data))
       .catch((error) => console.error("Error updating user:", error));
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded-lg w-96">
+    <div className="fixed inset-0 backdrop-blur-sm flex items-center justify-center">
+      <div className="bg-white border-1 p-6 rounded-lg w-96">
         <h2 className="text-lg font-bold mb-4">Edit User</h2>
         <div className="space-y-4">
           <input
