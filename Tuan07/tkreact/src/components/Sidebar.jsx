@@ -8,7 +8,7 @@ const Sidebar = () => {
         <div className="mb-8">
           <img src="/img/Image 1858.png" alt="" className="h-12"/>
         </div>
-        <nav>
+        {/* <nav>
           <ul className="space-y-4">
             <li>
               <NavLink
@@ -45,7 +45,7 @@ const Sidebar = () => {
                   }`
                 }
               >
-                <img src="/img/Groups.png" alt="" /> 
+                <img src="/img/Groups.png" alt="" />  
                 <p>Teams</p>  
               </NavLink>
             </li>
@@ -94,7 +94,7 @@ const Sidebar = () => {
           <img src="/img/Group.png" alt="" className="mx-auto my-auto"/>
           <h3 className="text-2xl font-bold">V2.0 is available</h3>
           <button className="bg-white border-2 border-blue-400 rounded-lg w-10/12 py-2 text-blue-400 text-xl cursor-pointer">Try now</button>
-        </div>
+        </div> */}
       </div>
       
     </>

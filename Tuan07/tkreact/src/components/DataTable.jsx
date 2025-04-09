@@ -154,7 +154,8 @@ const DataTable = () => {
           onClose={() => setIsAddModalOpen(false)}
           onAdd={(newUser) => {
             setUsers([...users, newUser]);
-            setIsAddModalOpen(false);
+            setIsAddModalOpen(false); 
+            // aaa
           }}
         />
       )}
