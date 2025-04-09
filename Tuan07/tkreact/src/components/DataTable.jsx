@@ -139,6 +139,7 @@ const DataTable = () => {
         </tbody>
       </table>
  
+      {/* editModal */}
       {isEditModalOpen && (
         <EditModal
           user={selectedUser}
@@ -149,6 +150,7 @@ const DataTable = () => {
           }}
         /> 
       )}
+      {/* addModal */}
       {isAddModalOpen && (
         <AddUserModal
           onClose={() => setIsAddModalOpen(false)} 

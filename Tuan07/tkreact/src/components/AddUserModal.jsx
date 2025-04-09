@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+//
 const AddUserModal = ({ onClose, onAdd }) => {
   const [formData, setFormData] = useState({
     customerName: "",
@@ -12,7 +12,7 @@ const AddUserModal = ({ onClose, onAdd }) => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  //POST
   const handleSubmit = () => {
     fetch("https://67e368a62ae442db76d0012e.mockapi.io/user", {
       method: "POST",
@@ -26,11 +26,13 @@ const AddUserModal = ({ onClose, onAdd }) => {
       .catch((error) => console.error("Error adding user:", error));
   };
 
+  //
   return (
     <div className="fixed inset-0 backdrop-blur-sm flex items-center justify-center shadow-lg z-50">
       <div className="bg-white border-1 p-6 rounded-lg w-96">
         <h2 className="text-lg font-bold mb-4">Add User</h2>
         <div className="space-y-4">
+        {/* customerName */}
           <input
             type="text"
             name="customerName"
@@ -38,7 +40,7 @@ const AddUserModal = ({ onClose, onAdd }) => {
             onChange={handleChange}
             placeholder="Customer Name"
             className="w-full p-2 border rounded-lg"
-          />
+          />  
           <input
             type="text"
             name="company"
@@ -55,6 +57,7 @@ const AddUserModal = ({ onClose, onAdd }) => {
             placeholder="Order Value"
             className="w-full p-2 border rounded-lg"
           />
+          {/* orderDate */}
           <input
             type="text"
             name="orderDate"
@@ -74,6 +77,7 @@ const AddUserModal = ({ onClose, onAdd }) => {
             <option value="Completed">Completed</option>
           </select>
         </div>
+        {/* click */}
         <div className="flex justify-end mt-4">
           <button onClick={onClose} className="mr-2 px-4 py-2 bg-gray-200 rounded-lg">
             Cancel
