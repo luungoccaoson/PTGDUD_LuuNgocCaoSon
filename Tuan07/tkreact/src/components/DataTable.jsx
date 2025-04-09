@@ -98,69 +98,68 @@ const DataTable = () => {
   }, [users]);
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md h-full overflow-y-auto">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex gap-2 ">
-          <img src="/img/File text 1.png" alt="" className="w-8"/>
-          <h2 className="text-2xl font-bold">Detailed Report</h2>
-        </div>
+    <div className="bg-white p-6 rounded-lg shadow-md h-full overflow-y-auto"> 
+      <div className="flex items-center justify-between mb-4"> 
+        <div className="flex gap-2 "> 
+          <img src="/img/File text 1.png" alt="" className="w-8"/> 
+          <h2 className="text-2xl font-bold">Detailed Report</h2> 
+        </div> 
                 
-        <div className="flex items-center gap-2">
-          <button
-            className="flex gap-1 bg-white text-pink-500 border border-pink-500 px-4 py-2 rounded-lg mr-2 cursor-pointer"
-            onClick={() => setIsAddModalOpen(true)}
+        <div className="flex items-center gap-2"> 
+          <button 
+            className="flex gap-1 bg-white text-pink-500 border border-pink-500 px-4 py-2 rounded-lg mr-2 cursor-pointer" 
+            onClick={() => setIsAddModalOpen(true)} 
           >
             <img src="/img/Download.png" alt="" className="pointer-events-none"/> Import
           </button>
-          <button 
+          <button  
             className="flex gap-1 bg-white text-pink-500 border border-pink-500 px-4 py-2 rounded-lg mr-2 cursor-pointer">
-            <img src="/img/Move up.png" alt="" className="pointer-events-none"/> Export
+            <img src="/img/Move up.png" alt="" className="pointer-events-none"/> Export 
           </button>
         </div>
-      </div>
+      </div> 
 
       <table
         ref={tableRef}
-        className="w-full text-left table-auto border border-gray-300 rounded-lg"
+        className="w-full text-left table-auto border border-gray-300 rounded-lg" 
         style={{ width: "100%" }}
       >
         <thead>
-          <tr className="text-gray-700 text-xl bg-gray-100">
+          <tr className="text-gray-700 text-xl bg-gray-100"> 
             <th></th>
             <th>Customer Name</th>
             <th>Company</th>
-            <th>Order Value</th>
+            <th>Order Value</th> 
             <th>Order Date</th>
-            <th>Status</th>
+            <th>Status</th> 
             <th>Actions</th>
-          </tr>
+          </tr> 
         </thead>
         <tbody>
         </tbody>
       </table>
-
+ 
       {isEditModalOpen && (
         <EditModal
           user={selectedUser}
           onClose={() => setIsEditModalOpen(false)}
           onSave={(updatedUser) => {
             setUsers(users.map((u) => (u.id === updatedUser.id ? updatedUser : u)));
-            setIsEditModalOpen(false);
+            setIsEditModalOpen(false); 
           }}
-        />
+        /> 
       )}
       {isAddModalOpen && (
         <AddUserModal
-          onClose={() => setIsAddModalOpen(false)}
+          onClose={() => setIsAddModalOpen(false)} 
           onAdd={(newUser) => {
-            setUsers([...users, newUser]);
-            setIsAddModalOpen(false); 
-            // aaa
+            setUsers([...users, newUser]); 
+            setIsAddModalOpen(false);  
           }}
         />
       )}
-    </div>
+    </div> 
   );
 };
 
-export default DataTable;
+export default DataTable; 

@@ -31,7 +31,7 @@ const Dashboard = () => {
       </div>
 
       <div className="p-4">
-        {/* <DataTable /> */}
+        <DataTable />
       </div>
     </>
   );
