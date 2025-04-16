@@ -7,7 +7,7 @@ import store from './redux/store'
 import store1 from './redux/store1';
 
 createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
+  <Provider store={store1}>
     <App />
   </Provider>
 )

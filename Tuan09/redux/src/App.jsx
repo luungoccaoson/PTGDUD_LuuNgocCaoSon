@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-      <CounterRedux />
-      {/* <CounterToolkit /> */}
+      {/* <CounterRedux /> */}
+      <CounterToolkit />
     </>
   )
 }
