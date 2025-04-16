@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from './themeSlice';
 
-export default function ThemeToggle() {
+export default function ThemeToggle() { 
   const theme = useSelector(state => state.theme.theme);
   const dispatch = useDispatch();
 
@@ -14,7 +14,7 @@ export default function ThemeToggle() {
         className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg transition duration-200"
       >
         Chuyển chế độ {theme === 'light' ? 'Tối' : 'Sáng'}
-      </button>
+      </button> 
     </div>
   );
 }
