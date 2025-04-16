@@ -5,6 +5,7 @@ import CounterToolkit from './components/CounterToolkit';
 import Counter from './features/counter/Counter';
 import TodoList from './features/todos/TodoList';
 import ThemeToggle from './features/theme/ThemeToggle';
+import ShoppingCart from './features/cart/ShoppingCart';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,9 +15,11 @@ function App() {
       {/* <CounterRedux /> */}
       {/* <CounterToolkit /> */}
 
-      <Counter />
+      {/* <Counter />
       <TodoList />
-      <ThemeToggle />
+      <ThemeToggle /> */}
+
+        <ShoppingCart />
     </>
   )
 }
