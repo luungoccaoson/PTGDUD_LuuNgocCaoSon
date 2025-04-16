@@ -1,43 +1,57 @@
 // src/features/cart/cartSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
-// Mảng sản phẩm có sẵn
-const initialProducts = [
-  { id: '1', name: 'Nước suối', price: 10000, quantity: 1 },
-  { id: '2', name: 'Trà tắc', price: 150000, quantity: 1 },
-  { id: '3', name: 'Cơm gà', price: 35000, quantity: 1 },
-];
+// Khởi tạo state ban đầu
+const initialState = {
+  cartItems: [],
+  totalQuantity: 0,
+  totalPrice: 0,
+};
 
+// Tạo slice cho cart
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: {
-    cartItems: [...initialProducts], // Giỏ hàng ban đầu có sẵn sản phẩm
-  },
+  initialState,
   reducers: {
-    // Thêm sản phẩm vào giỏ hàng
+    // Thêm sản phẩm vào giỏ
     addItem: (state, action) => {
-      const itemIndex = state.cartItems.findIndex(item => item.id === action.payload.id);
-      if (itemIndex >= 0) {
-        // Nếu sản phẩm đã có trong giỏ, tăng số lượng
-        state.cartItems[itemIndex].quantity += action.payload.quantity;
+      const item = action.payload;
+      const existingItem = state.cartItems.find((i) => i.id === item.id);
+
+      if (existingItem) {
+        existingItem.quantity += item.quantity;
       } else {
-        // Nếu sản phẩm chưa có trong giỏ, thêm mới
-        state.cartItems.push(action.payload);
+        state.cartItems.push(item);
       }
+
+      // Cập nhật lại tổng số lượng và tổng tiền
+      state.totalQuantity = state.cartItems.reduce((total, item) => total + item.quantity, 0);
+      state.totalPrice = state.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
     },
-    // Xoá sản phẩm khỏi giỏ hàng
+    // Xóa sản phẩm khỏi giỏ
     removeItem: (state, action) => {
-      state.cartItems = state.cartItems.filter(item => item.id !== action.payload.id);
+      const id = action.payload;
+      state.cartItems = state.cartItems.filter((item) => item.id !== id);
+
+      // Cập nhật lại tổng số lượng và tổng tiền
+      state.totalQuantity = state.cartItems.reduce((total, item) => total + item.quantity, 0);
+      state.totalPrice = state.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
     },
     // Cập nhật số lượng sản phẩm trong giỏ
     updateQuantity: (state, action) => {
-      const itemIndex = state.cartItems.findIndex(item => item.id === action.payload.id);
-      if (itemIndex >= 0) {
-        state.cartItems[itemIndex].quantity = action.payload.quantity;
+      const { id, quantity } = action.payload;
+      const item = state.cartItems.find((item) => item.id === id);
+      if (item) {
+        item.quantity = quantity;
       }
+
+      // Cập nhật lại tổng số lượng và tổng tiền
+      state.totalQuantity = state.cartItems.reduce((total, item) => total + item.quantity, 0);
+      state.totalPrice = state.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
     },
   },
 });
 
+// Xuất các action để sử dụng trong component
 export const { addItem, removeItem, updateQuantity } = cartSlice.actions;
 export default cartSlice.reducer;
