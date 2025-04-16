@@ -8,6 +8,7 @@ import ThemeToggle from './features/theme/ThemeToggle';
 import ShoppingCart from './features/cart/ShoppingCart';
 import Auth from './features/auth/Auth';
 
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -20,8 +21,10 @@ function App() {
       <TodoList />
       <ThemeToggle /> */}
 
-        <ShoppingCart />
-        {/* <Auth /> */}
+        {/* <ShoppingCart /> */}
+        <Auth />
+
+        
     </>
   )
 }
