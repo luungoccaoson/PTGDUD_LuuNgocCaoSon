@@ -1,7 +1,7 @@
 var massMark1 = 78;
 var heightMark1 = 1.69;
 var massJohn1 = 92;
-var heightJohn1 = 1.95;
+var heightJohn1 = 1.95; 
 
 var markBMI1 = (massMark1/(heightMark1*heightMark1));
 var johnBMI1 = (massJohn1/(heightJohn1*heightJohn1));
